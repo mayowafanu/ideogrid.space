@@ -1,0 +1,146 @@
+<!-- =============================================
+     article.html — Article Detail Template
+     ============================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article — Learning Systems Lab</title>
+  <meta name="description" content="Research article from the Learning Systems Lab at IDEOGRID.">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ideogrid.space/article">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,650;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Replace the full nav with just this empty container -->
+<nav class="global-nav" role="navigation" aria-label="Main navigation"></nav>
+
+<main id="main-content">
+  <section class="section">
+    <div class="container">
+      <article id="article-detail" aria-label="Research article">
+        <!-- Populated by article.js -->
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Learning Systems Lab &middot; IDEOGRID</p>
+  </div>
+</footer>
+
+
+<script>
+  // Inline navigation — remove this once external file loading is fixed
+  (function() {
+    var nav = document.querySelector('.global-nav');
+    if (!nav) return;
+    
+    nav.innerHTML = 
+      '<a href="index.html" class="nav-brand">' +
+        '<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:28px;height:28px;flex-shrink:0;">' +
+          '<rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>' +
+          '<rect x="18" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>' +
+          '<rect x="2" y="18" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>' +
+          '<rect x="18" y="18" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.3"/>' +
+          '<circle cx="24" cy="24" r="3" fill="currentColor"/>' +
+        '</svg>' +
+        'IDEOGRID' +
+      '</a>' +
+      '<button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">' +
+        '<span></span><span></span><span></span>' +
+      '</button>' +
+      '<ul class="nav-links" role="menubar">' +
+        '<li role="none"><a href="index.html" role="menuitem">Home</a></li>' +
+        '<li role="none"><a href="research.html" role="menuitem">Research Lab</a></li>' +
+        '<li role="none"><a href="ideogrid.html" role="menuitem">The System</a></li>' +
+        '<li role="none"><a href="case-studies.html" role="menuitem">Case Studies</a></li>' +
+        '<li role="none"><a href="glossary.html" role="menuitem">Intervention Glossary</a></li>' +
+        '<li role="none"><a href="about.html" role="menuitem">About</a></li>' +
+        '<li role="none"><a href="contact.html" role="menuitem">Contact</a></li>' +
+        '<li role="none"><a href="resources.html" role="menuitem">Resources</a></li>' +
+      '</ul>';
+
+    // Active link
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    if (page === '' || window.location.pathname === '/') page = 'index.html';
+    
+    var links = nav.querySelectorAll('.nav-links a');
+    links.forEach(function(link) {
+      if (link.getAttribute('href') === page) link.classList.add('active');
+    });
+    if (page === 'article.html') {
+      links.forEach(function(link) {
+        if (link.getAttribute('href') === 'research.html') link.classList.add('active');
+      });
+    }
+    if (page === 'case-detail.html') {
+      links.forEach(function(link) {
+        if (link.getAttribute('href') === 'case-studies.html') link.classList.add('active');
+      });
+    }
+
+    // Mobile menu
+    var toggle = nav.querySelector('.nav-toggle');
+    var navList = nav.querySelector('.nav-links');
+    toggle.addEventListener('click', function() {
+      var open = navList.classList.contains('open');
+      if (open) {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.classList.remove('nav-open');
+      } else {
+        navList.classList.add('open');
+        toggle.classList.add('open');
+        document.body.classList.add('nav-open');
+      }
+    });
+    navList.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  })();
+</script>
+
+
+
+<script src="js/data.js"></script> 
+<script src="js/article.js"></script>
+</body>
+</html>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "ARTICLE_TITLE",
+  "author": {
+    "@type": "Person",
+    "name": "YOUR_NAME",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Learning Systems Lab, IDEOGRID"
+    }
+  },
+  "datePublished": "ARTICLE_DATE",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Learning Systems Lab"
+  }
+}
+</script>

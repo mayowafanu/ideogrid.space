@@ -1,0 +1,170 @@
+<!-- =============================================
+     about.html — About Page
+     ============================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — IDEOGRID & Learning Systems Lab</title>
+  <meta name="description" content="IDEOGRID is developed by Learning Systems Lab — a research group dedicated to designing decision-support systems for education.">
+  <meta property="og:title" content="About — IDEOGRID & Learning Systems Lab">
+  <meta property="og:description" content="Research generates ideas. IDEOGRID operationalizes them. Classrooms provide evidence.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ideogrid.space/about">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,650;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Learning Systems Lab",
+    "description": "Research group designing decision-support systems for education",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "IDEOGRID"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Replace the full nav with just this empty container -->
+<nav class="global-nav" role="navigation" aria-label="Main navigation"></nav>
+
+<main id="main-content">
+  <section class="section section-border">
+    <div class="container">
+      <h1>About</h1>
+      <p style="font-size:1.2rem;font-weight:500;max-width:600px;">IDEOGRID is developed and maintained by Learning Systems Lab — a research group dedicated to designing decision-support systems for education.</p>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+        <div>
+          <h2>Why This Lab Exists</h2>
+          <p>Classrooms are complex adaptive systems. Teachers face overwhelming data streams, fragmented tools, and a critical absence of structured decision frameworks. Most educational technology responds by adding more data. We build interpretation systems instead.</p>
+          <p>The lab's research examines how teachers actually make instructional decisions — and designs systems that make those decisions more consistent, more timely, and more effective.</p>
+        </div>
+        <div>
+          <h2>Research Philosophy</h2>
+          <ul style="list-style:none;font-size:1.05rem;color:#2c3e4e;">
+            <li style="margin-bottom:14px;">Structure over raw data</li>
+            <li style="margin-bottom:14px;">Interpretation over dashboards</li>
+            <li style="margin-bottom:14px;">Systems over tools</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Relationship Map</h2>
+      <div class="flow-diagram" style="justify-content:flex-start;" aria-label="Research to impact relationship">
+        <a href="research.html" class="flow-node">Research Lab</a>
+        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+        <a href="ideogrid.html" class="flow-node">IDEOGRID System</a>
+        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+        <span class="flow-node">Schools</span>
+      </div>
+      <p style="margin-top:20px;color:var(--text-secondary);">Research generates ideas. IDEOGRID operationalizes them. Case studies validate them. The cycle feeds back — classroom evidence informs the next research question.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>IDEOGRID &middot; Powered by Learning Systems Lab</p>
+  </div>
+</footer>
+
+
+
+
+<script>
+  // Inline navigation — remove this once external file loading is fixed
+  (function() {
+    var nav = document.querySelector('.global-nav');
+    if (!nav) return;
+    
+    nav.innerHTML = 
+      '<a href="index.html" class="nav-brand">' +
+        '<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:28px;height:28px;flex-shrink:0;">' +
+          '<rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>' +
+          '<rect x="18" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>' +
+          '<rect x="2" y="18" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>' +
+          '<rect x="18" y="18" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.3"/>' +
+          '<circle cx="24" cy="24" r="3" fill="currentColor"/>' +
+        '</svg>' +
+        'IDEOGRID' +
+      '</a>' +
+      '<button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">' +
+        '<span></span><span></span><span></span>' +
+      '</button>' +
+      '<ul class="nav-links" role="menubar">' +
+        '<li role="none"><a href="index.html" role="menuitem">Home</a></li>' +
+        '<li role="none"><a href="research.html" role="menuitem">Research Lab</a></li>' +
+        '<li role="none"><a href="ideogrid.html" role="menuitem">The System</a></li>' +
+        '<li role="none"><a href="case-studies.html" role="menuitem">Case Studies</a></li>' +
+        '<li role="none"><a href="glossary.html" role="menuitem">Intervention Glossary</a></li>' +
+        '<li role="none"><a href="about.html" role="menuitem">About</a></li>' +
+        '<li role="none"><a href="contact.html" role="menuitem">Contact</a></li>' +
+        '<li role="none"><a href="resources.html" role="menuitem">Resources</a></li>' +
+      '</ul>';
+
+    // Active link
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    if (page === '' || window.location.pathname === '/') page = 'index.html';
+    
+    var links = nav.querySelectorAll('.nav-links a');
+    links.forEach(function(link) {
+      if (link.getAttribute('href') === page) link.classList.add('active');
+    });
+    if (page === 'article.html') {
+      links.forEach(function(link) {
+        if (link.getAttribute('href') === 'research.html') link.classList.add('active');
+      });
+    }
+    if (page === 'case-detail.html') {
+      links.forEach(function(link) {
+        if (link.getAttribute('href') === 'case-studies.html') link.classList.add('active');
+      });
+    }
+
+    // Mobile menu
+    var toggle = nav.querySelector('.nav-toggle');
+    var navList = nav.querySelector('.nav-links');
+    toggle.addEventListener('click', function() {
+      var open = navList.classList.contains('open');
+      if (open) {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.classList.remove('nav-open');
+      } else {
+        navList.classList.add('open');
+        toggle.classList.add('open');
+        document.body.classList.add('nav-open');
+      }
+    });
+    navList.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  })();
+</script>
+
+
+
+</body>
+</html>

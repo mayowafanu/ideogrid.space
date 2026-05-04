@@ -1,0 +1,208 @@
+<!-- =============================================
+     index.html — Home Page
+     ============================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDEOGRID — A Learning Systems Lab</title>
+  <meta name="description" content="IDEOGRID is a structured learning system, built by a research lab focused on how teachers make better instructional decisions.">
+  <meta property="og:title" content="IDEOGRID — A Learning Systems Lab">
+  <meta property="og:description" content="A structured learning system for teacher decision-making, backed by research.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ideogrid.space/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,650;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+ 
+<!-- Replace the full nav with just this empty container -->
+<nav class="global-nav" role="navigation" aria-label="Main navigation"></nav>
+
+<main id="main-content">
+  <section class="section">
+    <div class="container">
+      <h1>IDEOGRID is a structured learning system.</h1>
+      <p class="subtitle">Behind it is Learning Systems Lab - a research group studying how teachers make better instructional decisions. The lab's research feeds into the system. The system's classroom data feeds back into the research.</p>
+      <div class="btn-group">
+        <a href="research.html" class="btn btn-primary">Enter Research Lab</a>
+        <a href="ideogrid.html" class="btn btn-outline">Explore the System</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="flow-diagram" aria-label="Research to impact flow">
+        <a href="research.html" class="flow-node">Research Lab</a>
+        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+        <a href="ideogrid.html" class="flow-node">IDEOGRID System</a>
+        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+        <span class="flow-node">Classroom Deployment</span>
+        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+        <a href="case-studies.html" class="flow-node">Case Evidence</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card-grid">
+        <a href="research.html" class="card" style="text-decoration:none;color:inherit;">
+          <h3>Research Lab</h3>
+          <p>Theory and papers on decision-support architectures, learning systems, and applied educational intelligence.</p>
+          <span class="tag">Intellectual Foundation</span>
+        </a>
+        <a href="ideogrid.html" class="card" style="text-decoration:none;color:inherit;">
+          <h3>IDEOGRID System</h3>
+          <p>Applied product operationalizing research into structured learning journeys and intervention management.</p>
+          <span class="tag">Flagship Product</span>
+        </a>
+        <a href="case-studies.html" class="card" style="text-decoration:none;color:inherit;">
+          <h3>Case Studies</h3>
+          <p>Documented school-level impact. Proof that structured systems change teacher decision-making.</p>
+          <span class="tag">Evidence Layer</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="insight-block">
+        Data is not the problem in education. Interpretation is.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3>Featured Case Study</h3>
+      <div class="card" style="margin-top:14px;">
+        <span class="tag" style="margin-bottom:10px;">IDEOGRID Deployment</span> 
+        <h4>Phoebestar Royalty School</h4>
+        <p>Osogbo, Osun State · 700+ students · 75 teachers</p>
+        <p>Improved intervention accuracy by 41% using structured tracking and intervention modules. Teachers reported significant reduction in decision fatigue.</p>
+        <a href="case-detail.html?id=phoebestar-royalty" class="btn btn-ghost btn-sm">Read full case study</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="btn-group">
+        <a href="research.html" class="btn btn-outline">View Research</a>
+        <a href="contact.html" class="btn btn-primary">Request IDEOGRID Demo</a>
+        <a href="contact.html" class="btn btn-outline">Contact Lab</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>IDEOGRID &middot; Powered by Learning Systems Lab</p>
+  </div>
+</footer>
+
+<script>
+  console.log('Page loaded. Testing script execution...');
+</script>
+<script src="js/navigation.js"></script>
+<script>
+  console.log('navigation.js tag has been parsed.');
+  if (typeof buildNav === 'function') {
+    console.log('buildNav function found.');
+  } else {
+    console.log('buildNav function NOT found — navigation.js may not have loaded.');
+  }
+</script>
+
+
+<script>
+  // Inline navigation — remove this once external file loading is fixed
+  (function() {
+    var nav = document.querySelector('.global-nav');
+    if (!nav) return;
+    
+    nav.innerHTML = 
+      '<a href="index.html" class="nav-brand">' +
+        '<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:28px;height:28px;flex-shrink:0;">' +
+          '<rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>' +
+          '<rect x="18" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>' +
+          '<rect x="2" y="18" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>' +
+          '<rect x="18" y="18" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.3"/>' +
+          '<circle cx="24" cy="24" r="3" fill="currentColor"/>' +
+        '</svg>' +
+        'IDEOGRID' +
+      '</a>' +
+      '<button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">' +
+        '<span></span><span></span><span></span>' +
+      '</button>' +
+      '<ul class="nav-links" role="menubar">' +
+        '<li role="none"><a href="index.html" role="menuitem">Home</a></li>' +
+        '<li role="none"><a href="research.html" role="menuitem">Research Lab</a></li>' +
+        '<li role="none"><a href="ideogrid.html" role="menuitem">The System</a></li>' +
+        '<li role="none"><a href="case-studies.html" role="menuitem">Case Studies</a></li>' +
+        '<li role="none"><a href="glossary.html" role="menuitem">Intervention Glossary</a></li>' +
+        '<li role="none"><a href="about.html" role="menuitem">About</a></li>' +
+        '<li role="none"><a href="contact.html" role="menuitem">Contact</a></li>' +
+        '<li role="none"><a href="resources.html" role="menuitem">Resources</a></li>' +
+      '</ul>';
+
+    // Active link
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    if (page === '' || window.location.pathname === '/') page = 'index.html';
+    
+    var links = nav.querySelectorAll('.nav-links a');
+    links.forEach(function(link) {
+      if (link.getAttribute('href') === page) link.classList.add('active');
+    });
+    if (page === 'article.html') {
+      links.forEach(function(link) {
+        if (link.getAttribute('href') === 'research.html') link.classList.add('active');
+      });
+    }
+    if (page === 'case-detail.html') {
+      links.forEach(function(link) {
+        if (link.getAttribute('href') === 'case-studies.html') link.classList.add('active');
+      });
+    }
+
+    // Mobile menu
+    var toggle = nav.querySelector('.nav-toggle');
+    var navList = nav.querySelector('.nav-links');
+    toggle.addEventListener('click', function() {
+      var open = navList.classList.contains('open');
+      if (open) {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.classList.remove('nav-open');
+      } else {
+        navList.classList.add('open');
+        toggle.classList.add('open');
+        document.body.classList.add('nav-open');
+      }
+    });
+    navList.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navList.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  })();
+</script>
+
+
+</body>
+</html>
+
+

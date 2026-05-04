@@ -1,0 +1,343 @@
+<!-- =============================================
+     contact.html — Updated Contact Page
+     Stacked forms, mobile-first, clear separation
+     ============================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Contact — IDEOGRID</title>
+  <meta name="description" content="Contact IDEOGRID: request a demo for your school or connect with the Learning Systems Lab research team.">
+  <meta property="og:title" content="Contact — IDEOGRID">
+  <meta property="og:description" content="Two contact flows: for schools requesting a demo, and for researchers exploring collaboration.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ideogrid.space/contact">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,650;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Contact page specific styles */
+    .contact-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 28px;
+      border-bottom: 2px solid var(--border);
+    }
+    .contact-tab {
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: all var(--transition);
+      font-family: var(--font);
+    }
+    .contact-tab:hover {
+      color: var(--accent);
+      background: var(--bg-soft);
+    }
+    .contact-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      font-weight: 600;
+    }
+    
+    .contact-form-panel {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+    .contact-form-panel.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    
+    .contact-card h2 {
+      margin-bottom: 6px;
+    }
+    
+    .contact-card .card-description {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .contact-info-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    
+    .contact-info-item {
+      flex: 1;
+      min-width: 140px;
+      background: var(--bg-soft);
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    
+    .contact-info-item .info-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
+    }
+    
+    .contact-info-item .info-value {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 600px) {
+      .contact-card {
+        padding: 20px 18px;
+      }
+      .contact-tab {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Replace the full nav with just this empty container -->
+<nav class="global-nav" role="navigation" aria-label="Main navigation"></nav>
+
+<!-- ========== MAIN CONTENT ========== -->
+<main id="main-content">
+
+  <!-- Header -->
+  <section class="section section-border">
+    <div class="container" style="text-align:center;">
+      <h1>Contact</h1>
+      <p class="subtitle" style="margin:0 auto 8px;">Two channels. Select the one that fits your needs.</p>
+    </div>
+  </section>
+
+  <!-- Tab Navigation -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="contact-tabs" role="tablist" aria-label="Contact form type">
+        <button class="contact-tab active" role="tab" aria-selected="true" data-tab="school" id="tab-school">
+          For Schools
+        </button>
+        <button class="contact-tab" role="tab" aria-selected="false" data-tab="research" id="tab-research">
+          For Researchers
+        </button>
+      </div>
+
+      <!-- School Form Panel -->
+      <div class="contact-form-panel active" id="panel-school" role="tabpanel" aria-labelledby="tab-school">
+        <div class="contact-card">
+          <h2>Contact for Schools</h2>
+          <p class="card-description">
+            Request an IDEOGRID demo, discuss implementation for your institution, or inquire about becoming a case study partner. We typically respond within 2-3 business days.
+          </p>
+          
+          <form id="school-form" novalidate>
+            <div class="form-group">
+              <label for="school-name">School Name <span style="color:#b91c1c;">*</span></label>
+              <input type="text" id="school-name" name="school_name" placeholder="e.g., Phoebestar Royalty School" required>
+              <span class="form-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="school-location">Location</label>
+              <input type="text" id="school-location" name="location" placeholder="City, State, Country">
+            </div>
+            
+            <div class="form-group">
+              <label for="school-email">Email Address <span style="color:#b91c1c;">*</span></label>
+              <input type="email" id="school-email" name="email" placeholder="you@school.edu" required>
+              <span class="form-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="school-role">Your Role</label>
+              <input type="text" id="school-role" name="role" placeholder="Head Teacher, Administrator, etc.">
+            </div>
+            
+            <div class="form-group">
+              <label for="school-inquiry">Inquiry Type</label>
+              <select id="school-inquiry" name="inquiry_type">
+                <option value="demo">Request a Demo</option>
+                <option value="implementation">Implementation Inquiry</option>
+                <option value="partnership">Case Study Partnership</option>
+                <option value="pricing">Pricing Information</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="school-message">Tell us about your school and needs</label>
+              <textarea id="school-message" name="message" rows="4" placeholder="Include details like: number of students, number of teachers, current systems you use, and what you're hoping IDEOGRID can help with..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              Send Inquiry
+            </button>
+            <div class="form-success">Your message has been received. We will respond within 2-3 business days.</div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Researcher Form Panel -->
+      <div class="contact-form-panel" id="panel-research" role="tabpanel" aria-labelledby="tab-research">
+        <div class="contact-card">
+          <h2>Contact for Researchers</h2>
+          <p class="card-description">
+            Academic collaboration, research discussion, or inquiry about the Learning Systems Lab's work. We welcome connections with researchers in education, cognitive science, and system design.
+          </p>
+          
+          <form id="research-form" novalidate>
+            <div class="form-group">
+              <label for="res-name">Full Name <span style="color:#b91c1c;">*</span></label>
+              <input type="text" id="res-name" name="name" placeholder="Your full name" required>
+              <span class="form-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="res-affiliation">Affiliation / Institution</label>
+              <input type="text" id="res-affiliation" name="affiliation" placeholder="University, Research Institute, etc.">
+            </div>
+            
+            <div class="form-group">
+              <label for="res-email">Email Address <span style="color:#b91c1c;">*</span></label>
+              <input type="email" id="res-email" name="email" placeholder="you@institution.edu" required>
+              <span class="form-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="res-interest">Area of Interest</label>
+              <select id="res-interest" name="interest">
+                <option value="decision-support">Decision-Support Systems</option>
+                <option value="learning-architectures">Learning Architectures</option>
+                <option value="intervention-design">Intervention Design</option>
+                <option value="ai-education">AI in Education</option>
+                <option value="collaboration">Research Collaboration</option>
+                <option value="access">Access to Research Papers</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="res-message">Describe your research interest or proposal</label>
+              <textarea id="res-message" name="message" rows="4" placeholder="Tell us about your research focus, what papers or topics interest you, and what kind of collaboration you have in mind..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              Send Message
+            </button>
+            <div class="form-success">Your message has been received. The research team will respond shortly.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alternative: Quick Info -->
+  <section class="section section-soft">
+    <div class="container" style="text-align:center;">
+      <h3 style="margin-bottom:16px;">Prefer to browse first?</h3>
+      <div class="contact-info-row" style="justify-content:center;">
+        <div class="contact-info-item">
+          <div class="info-label">Research Papers</div>
+          <a href="research.html" class="info-value" style="text-decoration:none;">Browse Archive</a>
+        </div>
+        <div class="contact-info-item">
+          <div class="info-label">Case Evidence</div>
+          <a href="case-studies.html" class="info-value" style="text-decoration:none;">View Case Study</a>
+        </div>
+        <div class="contact-info-item">
+          <div class="info-label">System Overview</div>
+          <a href="ideogrid.html" class="info-value" style="text-decoration:none;">Explore IDEOGRID</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="container">
+    <p>IDEOGRID &middot; Learning Systems Lab</p>
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script src="js/navigation.js"></script>
+<script src="js/contact.js"></script>
+<script>
+  // Tab switching logic
+  (function() {
+    const tabs = document.querySelectorAll('.contact-tab');
+    const panels = document.querySelectorAll('.contact-form-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const targetTab = this.dataset.tab;
+        
+        // Update tabs
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+        
+        // Update panels
+        panels.forEach(panel => {
+          panel.classList.remove('active');
+        });
+        const targetPanel = document.getElementById('panel-' + targetTab);
+        if (targetPanel) {
+          targetPanel.classList.add('active');
+        }
+        
+        // Update URL hash without scrolling
+        window.history.replaceState({}, '', '#contact-' + targetTab);
+      });
+    });
+    
+    // Check URL hash on load
+    const hash = window.location.hash;
+    if (hash === '#contact-research') {
+      const researchTab = document.querySelector('[data-tab="research"]');
+      if (researchTab) researchTab.click();
+    }
+  })();
+</script>
+
+</body>
+</html>
