@@ -8,6 +8,9 @@
 
 set -Eeuo pipefail
 
+echo 'Intentional merge-gate failure probe' >&2
+exit 1
+
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SQL_FILE="$ROOT_DIR/database/security_audit.sql"
 
