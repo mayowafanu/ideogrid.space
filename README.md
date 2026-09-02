@@ -1,1 +1,0 @@
-# ideogrid.space
